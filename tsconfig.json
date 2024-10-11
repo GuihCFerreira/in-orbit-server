@@ -4,12 +4,15 @@
 
   "compilerOptions": {
     "lib": ["es2023"],
-    "module": "node16",
-    "target": "es2022",
-
+    "module": "Node16",
+    "target": "ES2022",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "node16"
-  }
+    "moduleResolution": "Node16",
+    "outDir": "dist",  // Diretório de saída para os arquivos compilados
+    "rootDir": "src"   // Diretório de onde o TypeScript irá compilar
+  },
+  "include": ["src/**/*.ts"],  // Inclui todos os arquivos .ts na pasta src
+  "exclude": ["node_modules", "dist"]  // Exclui node_modules e a pasta dist
 }
