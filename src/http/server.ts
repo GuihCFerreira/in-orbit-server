@@ -14,6 +14,7 @@ import { getWeekSummaryRoute } from "./routes/get-week-summary";
 dotenv.config();
 
 var port = 3333;
+const host = "RENDER" in process.env ? `0.0.0.0` : `localhost`;
 
 if (process.env.PORT != null) port = Number(process.env.PORT);
 
@@ -35,6 +36,7 @@ app.register(createCompletionRoute);
 
 app
   .listen({
+    host: host,
     port: port,
   })
   .then(() => {
