@@ -17,6 +17,8 @@ var port = 3333;
 
 if (process.env.PORT != null) port = Number(process.env.PORT);
 
+console.log(port);
+
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.register(fastifyCors, {
