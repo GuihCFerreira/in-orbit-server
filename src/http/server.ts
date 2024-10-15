@@ -13,6 +13,10 @@ import { getWeekSummaryRoute } from "./routes/get-week-summary";
 
 dotenv.config();
 
+var port = 3333;
+
+if (process.env.PORT != null) port = Number(process.env.PORT);
+
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.register(fastifyCors, {
@@ -29,8 +33,8 @@ app.register(createCompletionRoute);
 
 app
   .listen({
-    port: 3333,
+    port: port,
   })
   .then(() => {
-    console.log("HTTP server running on port 3333");
+    console.log(`HTTP server running on port ${port}`);
   });
